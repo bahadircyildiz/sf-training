@@ -1,0 +1,17 @@
+<template>
+    <lightning-input
+        type="number"
+        label="Number of Employees"
+        value={numberOfEmployees}
+        onchange={handleChange}
+    >
+    </lightning-input>
+
+    <template lwc:if={accounts}>
+        <template lwc:if={accounts.data}>
+            <template for:each={accounts.data} for:item="account">
+                <p key={account.Id}>{account.Name}</p>
+            </template>
+        </template>
+    </template>
+</template>
